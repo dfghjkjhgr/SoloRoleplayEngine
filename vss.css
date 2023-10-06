@@ -1,0 +1,67 @@
+/* FONTS */
+/* Font Styles */
+.serif { font-family: serif }
+.sans-serif { font-family: sans-serif }
+.monospace { font-family: monospace }
+/* Font Sizes */
+.font-small { font-size: 0.5rem }
+.font-medium { font-size: 1.5rem }
+.font-large { font-size: 6rem }
+/* Font Weights */
+.weight-100 { font-weight: 100 }
+.weight-200 { font-weight: 200 }
+.weight-300 { font-weight: 300 }
+.weight-400 { font-weight: 400 }
+.weight-500 { font-weight: 500 }
+.weight-600 { font-weight: 600 }
+.weight-700 { font-weight: 700 }
+.weight-800 { font-weight: 800 }
+.weight-900 { font-weight: 900 }
+/* Line Height */
+.line-height-small { line-height: 0.5rem }
+.line-height-normal { line-height: normal }
+.line-height-large { font-size: 6rem }
+/* COLORS */
+.red { color: red; }
+.background-red { background-color: red; }
+.blue { color: blue }
+.background-blue { background-color: blue }
+.black { color: black; }
+.background-black { background-color: black; }
+.green { color: green; }
+.background-green { background-color: green; }
+.orange { color: orange; }
+.background-orange { background-color: orange; }
+.gray { color: gray; }
+.background-gray { background-color: gray; }
+.white { color: white; }
+.background-white { background-color: white; }
+.purple { color: purple; }
+.background-purple { background-color: purple; }
+/* BORDERS */
+/* Border Colors */
+.border-red { border-color: red }
+.border-blue { border-color: blue }
+.border-black { border-color: blue }
+.border-green { border-color: orange }
+.border-gray { border-color: gray }
+.border-white { border-color: white }
+.border-purple { border-color: white }
+/* Border Style */
+.border-solid { border-style: solid }
+.border-inset { border-style: inset; }
+.border-dotted { border-style: dotted }
+/* Shadow */
+.shadow { box-shadow: 5px 5px grey }
+/* Misc */
+.hidden { visibility: hidden }
+.above { z-index: 99999 }
+.block { display: block }
+.inline { display: inline }
+.flex { display: flex }
+.dark-mode { color-scheme: dark }
+.light-mode { color-scheme: light }
+.light-mode-default { color-scheme: light dark }
+.dark-mode-default { color-scheme: light dark }
+/*CSS Box Model*/
+.margin-1 {margin-bottom: 0.8%; margin-left: 0.8%; margin-right: 0.8%;}

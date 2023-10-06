@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Solo Roleplay Engine</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="vss.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="light-mode-default">
+  <p id="log" class="sans-serif"></p>
+  <textarea id="notes" placeholder="Press the notes button again to close"></textarea>
+  <article>
+      <hr>
+      <input type="text" placeholder="Action/Narration (press return to submit)" id="main-input" class="font-medium monospace button"></input>
+      <br>
+      <label class="font-small">
+          ORACLE:
+          <button id="oracle-unlikely" class="button">U</button><button id="oracle-fiftyfifty" class="button">50/50</button><button id="oracle-likely" class="button">L</button>
+          <button id="portent-button" class="button">PORTENT</button>  
+          <button id="twane" class="button">TWANE</button>
+      </label>
+      <br>
+      <input type="text" placeholder="Roller" id="roll-input"></input>
+      <button id="roll-button" class="button">ROLL</button><span id="error-text" class="red"></span>
+      <button id="note-button" class="button">NOTES</button>
+      <button id="save-button" class="button">SAVE</button>
+      <button id="clear-button" class="button">CLEAR LOG</button>
+      
+  </article>
+  <div id="copyright-info"><span style="grid-row: 4;">Solo Roleplay Engine © Charles Jojo Yawson, Version 1.0.0</span></div>
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+<script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+
+
+    <script type="module" src="script.js"></script>
+    <script src="https://unpkg.com/mathjs@11.8.2/lib/browser/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/random-js@2.1.0/dist/random-js.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@dice-roller/rpg-dice-roller/lib/umd/bundle.min.js"></script>
+    <script type="module" src="./lib/random_words.min.js"></script>
+    <script type="module" src="./events.js"></script>
+    
+</body>
+
+</html>
