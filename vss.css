@@ -62,6 +62,8 @@
 .dark-mode { color-scheme: dark }
 .light-mode { color-scheme: light }
 .light-mode-default { color-scheme: light dark }
-.dark-mode-default { color-scheme: light dark }
+.dark-mode-default { color-scheme: dark light }
 /*CSS Box Model*/
 .margin-1 {margin-bottom: 0.8%; margin-left: 0.8%; margin-right: 0.8%;}
+
+html {visibility: visible;}
