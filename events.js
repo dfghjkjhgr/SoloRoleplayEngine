@@ -1,15 +1,19 @@
 var roller = new rpgDiceRoller.DiceRoller();
 import { generate, count } from "./lib/random_words.min.js";
 import { addInterventionPoint, changeInterventionIfNeccesary, oracle, twane, interventions } from "./oracle.js";
+
 let interventionPoints = 0;
-
-
 let greater = (x, y) => x > y ? x : y;
 let lesser = (x, y) => x > y ? y : x;
 let undo = null;
 let log = document.querySelector("#log"); 
 log.scrollTop = 9999999;
 let noteBox = document.querySelector("#notes");
+let download = document.querySelector("#download")
+
+function setDownload(logText) {
+  download.href = URL.createObjectURL(new Blob([logText], {type: "text/plain"}));
+}
 
 function setUndo(text) {
     undo = text;
@@ -18,7 +22,6 @@ function setUndo(text) {
     } else {
         document.querySelector("#undo").style.visibility = "hidden";
     }
-    
 }
     
 function appendToLog(text) {
@@ -27,6 +30,7 @@ function appendToLog(text) {
     let stories = JSON.parse(window.localStorage.stories);
     stories[0].log += text
     window.localStorage.stories = JSON.stringify(stories)
+    setDownload(log.innerText)
 }
 
 document.querySelector("#oracle-fiftyfifty").addEventListener("click", function () {
