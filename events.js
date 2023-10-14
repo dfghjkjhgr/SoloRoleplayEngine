@@ -6,11 +6,23 @@ let interventionPoints = 0;
 
 let greater = (x, y) => x > y ? x : y;
 let lesser = (x, y) => x > y ? y : x;
-
+let undo = null;
 let log = document.querySelector("#log"); 
+log.scrollTop = 9999999;
 let noteBox = document.querySelector("#notes");
 
-function appendToLog(text) { 
+function setUndo(text) {
+    undo = text;
+    if (text !== null) {
+        document.querySelector("#undo").style.visibility = "visible";
+    } else {
+        document.querySelector("#undo").style.visibility = "hidden";
+    }
+    
+}
+    
+function appendToLog(text) {
+    setUndo(log.innerText)
     log.innerText += text;
     let stories = JSON.parse(window.localStorage.stories);
     stories[0].log += text
@@ -58,12 +70,13 @@ document.querySelector("#note-button").addEventListener("click", function () {
     if (noteBox.style.visibility == "visible") {
         noteBox.style.visibility = "hidden";
         document.querySelector("#note-button").innerText = "NOTES";
-    } else {
-        document.querySelector("#notes").style.visibility = "visible";
-        document.querySelector("#note-button").innerText = "CLOSE NOTES";
         let stories = JSON.parse(window.localStorage.stories);
         stories[0].notes = document.querySelector("#notes").value;
         window.localStorage.stories = JSON.stringify(stories);
+    } else {
+        document.querySelector("#notes").style.visibility = "visible";
+        document.querySelector("#note-button").innerText = "CLOSE NOTES";
+        
     }
     
 })
@@ -74,6 +87,7 @@ document.querySelector("#main-input").addEventListener("keydown", (event) => {
     if (event.code === "Enter") {
         appendToLog(`${document.querySelector("#main-input").value}\n\n`);
         document.querySelector("#main-input").value = "";
+        log.scrollTop = 9999999; // Make it so the user doesn't have to scroll all the way down
     }
 });
 document.querySelector("#clear-button").addEventListener("click", (event) => {
@@ -82,3 +96,8 @@ document.querySelector("#clear-button").addEventListener("click", (event) => {
     stories[0].log = "";
     window.localStorage.stories = JSON.stringify(stories);
 });
+
+document.querySelector("#undo").addEventListener("click", function(event) {
+    log.innerText = undo;
+    setUndo(null);
+})
